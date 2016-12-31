@@ -70,21 +70,21 @@ with graph.as_default():
 	# hyperparameters
 	dropout_probability = 0.7
 	h1_size = 1024
-	h2_size = 200
+	h2_size = 512
 	out_size = 10
-	beta = 0.000001
+	beta = 0.00001
 
 	# create hidden layer 1
-	h1_weights = tf.Variable(tf.truncated_normal([image_size*image_size, h1_size]))
-	h1_biases = tf.Variable(tf.zeros([h1_size]))
+	h1_weights = tf.get_variable("h1_weights", shape=[image_size*image_size, h1_size], initializer=tf.contrib.layers.xavier_initializer())
+	h1_biases = tf.get_variable("h1_biases", shape=[h1_size])
 
 	# create hidden layer 2
-	h2_weights = tf.Variable(tf.truncated_normal([h1_size, h2_size]))
-	h2_biases = tf.Variable(tf.zeros([h2_size]))
+	h2_weights = tf.get_variable("h2_weights", shape=[h1_size, h2_size], initializer=tf.contrib.layers.xavier_initializer())
+	h2_biases = tf.get_variable("h2_biases", shape=[h2_size])
 
 	# create output layer
-	out_weights = tf.Variable(tf.truncated_normal([h2_size, out_size]))
-	out_biases = tf.Variable(tf.zeros([out_size]))
+	out_weights = tf.get_variable("out_weights", shape=[h2_size, out_size], initializer=tf.contrib.layers.xavier_initializer())
+	out_biases = tf.get_variable("out_biases", shape=[out_size])
 
 	# output function
 	def graphOutput(dataset, training=False):
