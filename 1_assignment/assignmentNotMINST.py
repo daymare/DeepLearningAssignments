@@ -266,7 +266,7 @@ print('Compreseed pickle size:', statinfo.st_size)
 
 
 
-
+"""
 # train data on simple model
 regression = linear_model.LinearRegression()
 
@@ -282,5 +282,6 @@ regression.fit(d2_train_dataset, train_labels)
 
 print('regression training score: ', regression.score(d2_train_dataset, train_labels))
 print('regression validation score: ', regression.score(d2_valid_dataset, valid_labels))
+"""
 
 

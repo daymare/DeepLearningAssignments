@@ -1,0 +1,14 @@
+
+conv, conv, regular.
+Minibatch accuracy: 75.0%
+Validation accuracy: 82.4%
+Test accuracy: 89.0%
+
+
+max_pool, conv, conv, regular.
+Minibatch accuracy: 81.2%
+Validation accuracy: 81.6%
+Test accuracy: 88.5%
+
+
+
